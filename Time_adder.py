@@ -1,6 +1,6 @@
 def add_time(st_time, duration, day = False):
 
-    lst = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    lst = ["","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     chr = 0
 
@@ -45,6 +45,9 @@ def add_time(st_time, duration, day = False):
     x = nhr
     newday = day
 
+    if lst.index(day) == 6:
+        newday = ""
+
     if day in lst:
         while x >= 24:
             nday = lst[lst.index(newday) + 1]
@@ -61,4 +64,4 @@ def add_time(st_time, duration, day = False):
     else:
         print(f"{nhr} : {nmn} AM, {nday}")
 
-add_time("3:40 PM", "72:20", "Monday")
+add_time("3:40 PM", "72:20", "")
